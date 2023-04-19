@@ -47,7 +47,7 @@ def inference(model_inputs:dict) -> dict:
     do_sample=True,
     stopping_criteria=StoppingCriteriaList([StopOnTokens()])
     )
-    result = tokenizer.decode(tokens[0], skip_special_tokens=True)
+    result = {"output":tokenizer.decode(tokens[0], skip_special_tokens=True)}
 
     # Return the results as a dictionary
     return result
